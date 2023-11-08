@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/MSI NB/OneDrive/Desktop/LAB by Aomat",
-      "program": "c:/Users/MSI NB/OneDrive/Desktop/LAB by Aomat/build/Debug/outDebug",
+      "cwd": "c:/Users/MSI NB/OneDrive/Desktop/Lab-by-aomat",
+      "program": "c:/Users/MSI NB/OneDrive/Desktop/Lab-by-aomat/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
