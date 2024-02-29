@@ -14,6 +14,7 @@ struct node {
 
 // kuy
 head = NULL;
+// help
 
 struct node *head = NULL;
 struct node *new_node = NULL;
