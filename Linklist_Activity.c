@@ -10,7 +10,7 @@ void delete_node();
 
 struct node{
     int data;
-    struct note *link;
+    struct node *link;
 };
 
 struct node *head = NULL;
