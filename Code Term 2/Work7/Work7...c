@@ -1,5 +1,3 @@
-// add insert and search
-
 # include <stdio.h>
 # include <stdlib.h>
 # include <conio.h>
@@ -47,8 +45,8 @@ filetype CreateFile(filetype fname){
         publishing.price = atoi(price);
         fwrite(&publishing,sizeof(publishing),1,fname);
         if (ferror(fname)) {
-            printf("Error in writing \n ");
-            exit(1);
+            printf("Error in writing \n\n ");
+            return(fname);
         }
     }
     fclose(fname);
@@ -61,13 +59,13 @@ void Display(filetype fname) {
     gets(filename);
     gets(filename);
     if ((fname = fopen(filename,"r")) == NULL) {
-        printf(" Error in opening file \n ");
-        exit(1);
+        printf(" Error in opening file \n\n ");
+        return;
     }
     while (fread(&publishing ,sizeof(publishing),1,fname) == 1){
     if (ferror(fname) ) {
-        printf(" Error in reading file \n ");
-        exit(1);
+        printf(" Error in reading file \n\n ");
+        return;
     }
     else {
         printf("code = %s \n",publishing.code);
@@ -87,8 +85,8 @@ filetype Insert(filetype fname){
         return(fname);}
     printf("%s\n",filename) ;
     if (( fname = fopen(filename,"a")) == NULL ) {
-        printf(" Error in opening file \n " );
-        exit(1);
+        printf(" Error in opening file \n\n " );
+        return(fname);
         }
     while (1) {
         printf("Code ( Enter = Quit ) : ");
@@ -101,8 +99,8 @@ filetype Insert(filetype fname){
         publishing.price = atoi(price);
         fwrite(&publishing,sizeof(publishing),1,fname);
         if (ferror(fname)) {
-            printf("Error in writing \n ");
-            exit(1);
+            printf("Error in writing \n\n ");
+            return(fname);
         }
     }
     fclose(fname);
@@ -116,15 +114,15 @@ void Search_data(filetype fname){
     gets(filename);
     printf("%s\n",filename) ;
     if (( fname = fopen(filename,"r")) == NULL ) {
-        printf(" Error in opening file \n " );
-        exit(1);
+        printf(" Error in opening file \n\n " );
+        return;
         }
     printf("Code ( Enter = Quit ) : ");
     gets(code);
     while (fread(&publishing ,sizeof(publishing),1,fname) == 1){
         if (ferror(fname) ) {
-            printf(" Error in reading file \n ");
-            exit(1);
+            printf(" Error in reading file \n\n ");
+            return;
         }
         else {
             if (strcmp(code,publishing.code)==0){
@@ -136,7 +134,6 @@ void Search_data(filetype fname){
     }
     fclose(fname);
 }
-
 
 int main(void) {
     filetype fp;
@@ -152,6 +149,6 @@ int main(void) {
     else if (ch==4)
         Search_data(fp);
     else if (ch != 5)
-        printf("You must be input 1-3 only\n\n"); 
+        printf("You must be input 1-5 only\n\n"); 
     }
 }
