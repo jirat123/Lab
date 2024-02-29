@@ -15,6 +15,7 @@ struct node {
 // kuy
 head = NULL;
 // help hhuh
+// djawdswadsqwa
 
 struct node *head = NULL;
 struct node *new_node = NULL;
