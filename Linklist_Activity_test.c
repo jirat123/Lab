@@ -12,6 +12,9 @@ struct node {
     struct node *link;
 };
 
+// kuy
+head = NULL;
+
 struct node *head = NULL;
 struct node *new_node = NULL;
 struct node *temp = NULL;
