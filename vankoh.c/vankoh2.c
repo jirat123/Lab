@@ -9,9 +9,11 @@ struct node {
 
 void create_node();
 void explore();
+void delete_node();
 
 struct node *temp = NULL;
 struct node *head = NULL;
+struct node *temp1 = NULL;
 
 int main(){
     int ans;
@@ -27,6 +29,9 @@ int main(){
         break;
         case 2 :
         explore();
+        break;
+        case 3 :
+        delete_node();
         break;
     }
     printf("Continue? y/n ");
@@ -59,6 +64,30 @@ void explore(){
         printf("%d ",temp->data);
         temp = temp -> next;
     }
-
 }
+
+void delete_node(){
+        temp1 = head;
+        temp = head;
+        int str;
+        printf("Enter your element which you want to delete : ");
+        scanf("%d",&str);
+        while (temp1 != NULL){
+            if (temp1 -> data == str){
+                break;
+            }
+            else{
+                temp = temp1;
+                temp1 = temp1 -> next;
+            }
+        }
+        if (temp1 -> next == NULL){
+            temp -> next = NULL;
+        }
+        else{
+            temp -> next = temp1 -> next;
+        }
+            printf("Delete completed\n");
+        }
+
 

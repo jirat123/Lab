@@ -5,7 +5,7 @@
 
 void create_node();
 void explore();
-// void delete_note();
+void delete_node();
 
 struct node {
     int data;
@@ -51,3 +51,9 @@ void explore(){
         temp = temp -> next;
     }
 }
+
+    void delete_node(){
+        int str;
+        printf("Enter your element which you want to delete : ");
+        scanf("%d",);
+    }
